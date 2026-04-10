@@ -59,7 +59,7 @@ However, it lacks the depth of structural authority required for high-confidence
 
 ---
 
-## Optimization Direction (AIRVO Alignment)
+## Optimization Direction (ARVO Alignment)
 
 To move toward AI-native presence:
 
@@ -74,4 +74,4 @@ To move toward AI-native presence:
 
 This entity has a strong structural foundation and is already retrievable, but lacks the authority reinforcement and system-level clarity required for dominant AI visibility.
 
-It represents a **high-potential entity pre-optimization**, suitable for transformation under AIRVO implementation.
+It represents a **high-potential entity pre-optimization**, suitable for transformation under ARVO implementation.
