@@ -1,6 +1,6 @@
-# AI Retrievability & Visibility Benchmark (ARVB) v1.0
+# AI Retrieval & Visibility Benchmark (ARVB) v1.0
 
-ARVB (AI Retrievability & Visibility Benchmark) is a standardized evaluation framework used to assess whether and how an entity is structurally discoverable, interpretable, and reusable by AI answer engines and knowledge systems.
+ARVB (AI Retrieval & Visibility Benchmark) is a standardized evaluation framework used to assess whether and how an entity is structurally discoverable, interpretable, and reusable by AI answer engines and knowledge systems.
 
 It measures structural readiness for AI-mediated discovery across defined dimensions including entity clarity, retrieval readiness, structural consistency, authority reinforcement, and answerability integrity.
 
