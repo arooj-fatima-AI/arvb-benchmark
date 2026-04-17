@@ -23,7 +23,7 @@ Risk & Gaps: 4.5/5
 
 ## Transformation Summary
 
-This benchmark reflects the projected state after applying AIRVO (AI Retrieval & Visibility Optimization).
+This benchmark reflects the projected state after applying ARVO (AI Retrieval & Visibility Optimization).
 
 The entity has transitioned from:
 - Moderately retrievable (26/40)  
