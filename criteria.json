@@ -1,13 +1,267 @@
 {
-  "ARVB": {
-    "Entity Clarity": 5,
-    "Data Layer Presence": 5,
-    "Chunk-ability": 5,
-    "Semantic Clarity": 5,
-    "Authority Signals": 5,
-    "Consistency": 5,
-    "Answerability": 5,
-    "Risk & Gaps": 5,
-    "Total": 40
-  }
+  "title": "ARVB Criteria",
+  "deterministic_scoring_system": {
+    "method": "Binary Checkpoints → Forced Score Mapping",
+    "interpretation_allowed": false,
+    "evaluation_process": [
+      "Fixed conditions",
+      "Binary validation (YES / NO)",
+      "Locked score outputs"
+    ]
+  },
+  "dimensions": [
+    {
+      "name": "Entity Clarity",
+      "score_range": "0-5",
+      "required_checks": [
+        "Category defined",
+        "Services/products listed",
+        "External reference exists",
+        "Canonical definition exists (X is Y for Z)"
+      ],
+      "score_mapping": [
+        {
+          "conditions_met": "0-1",
+          "score": "0-1"
+        },
+        {
+          "conditions_met": "2",
+          "score": 2
+        },
+        {
+          "conditions_met": "3",
+          "score": 3
+        },
+        {
+          "conditions_met": "4 (including canonical definition)",
+          "score": 4
+        },
+        {
+          "conditions_met": "4 + disambiguation layer",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "name": "Data Layer Presence",
+      "score_range": "0-5",
+      "required_checks": [
+        "JSON-LD present",
+        "Schema markup present",
+        "Entity graph present",
+        "SameAs / identifiers present"
+      ],
+      "hard_rule": "If none exist → score MUST be 0",
+      "score_mapping": [
+        {
+          "condition": "Nothing detectable",
+          "score": 0
+        },
+        {
+          "condition": "Any structured data",
+          "score": 1
+        },
+        {
+          "condition": "Multi-entity structured graph",
+          "score": "2-5"
+        }
+      ]
+    },
+    {
+      "name": "Chunkability",
+      "score_range": "0-5",
+      "required_checks": [
+        "Lists present",
+        "Service blocks present",
+        "Case studies/projects",
+        "FAQs present",
+        "Definitions as standalone blocks"
+      ],
+      "score_mapping": [
+        {
+          "structures_present": 0,
+          "score": 0
+        },
+        {
+          "structures_present": "1-2",
+          "score": 1
+        },
+        {
+          "structures_present": 3,
+          "score": 2
+        },
+        {
+          "structures_present": 4,
+          "score": 3
+        },
+        {
+          "structures_present": "5+ including Q&A",
+          "score": "4-5"
+        }
+      ]
+    },
+    {
+      "name": "Semantic Clarity",
+      "score_range": "0-5",
+      "required_checks": [
+        "Defined concepts",
+        "Clear scope boundaries",
+        "Explicit differentiation",
+        "Minimal hype language"
+      ],
+      "score_mapping": [
+        {
+          "condition_level": "Mostly vague",
+          "score": 1
+        },
+        {
+          "condition_level": "Some definitions",
+          "score": 2
+        },
+        {
+          "condition_level": "Clear terminology",
+          "score": 3
+        },
+        {
+          "condition_level": "Explicit boundaries",
+          "score": 4
+        },
+        {
+          "condition_level": "Fully formalized",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "name": "Authority Signals",
+      "score_range": "0-5",
+      "required_checks": [
+        "External listings",
+        "Case studies",
+        "Proprietary framework",
+        "Publications",
+        "Citations / references"
+      ],
+      "rule": "Claims do NOT count",
+      "score_mapping": [
+        {
+          "signals_present": "None",
+          "score": 0
+        },
+        {
+          "signals_present": "1 weak",
+          "score": 1
+        },
+        {
+          "signals_present": "2 verifiable",
+          "score": 2
+        },
+        {
+          "signals_present": "3+ strong",
+          "score": 3
+        },
+        {
+          "signals_present": "Recognized authority layer",
+          "score": "4-5"
+        }
+      ]
+    },
+    {
+      "name": "Consistency",
+      "score_range": "0-5",
+      "required_checks": [
+        "Website internal consistency",
+        "LinkedIn alignment",
+        "External profile alignment",
+        "Absence of contradictions"
+      ],
+      "score_mapping": [
+        {
+          "alignment_level": "None",
+          "score": 0
+        },
+        {
+          "alignment_level": "1 source",
+          "score": 1
+        },
+        {
+          "alignment_level": "2 aligned sources",
+          "score": 2
+        },
+        {
+          "alignment_level": "3 aligned sources",
+          "score": 3
+        },
+        {
+          "alignment_level": "Multi-platform entity graph",
+          "score": "4-5"
+        }
+      ]
+    },
+    {
+      "name": "Answerability",
+      "score_range": "0-5",
+      "required_checks": [
+        "Direct What is X definition",
+        "FAQs present",
+        "Direct answers",
+        "Only paragraph inference"
+      ],
+      "hard_rule": "If answers require inference → MAX = 2",
+      "score_mapping": [
+        {
+          "condition": "No answerable units",
+          "score": 0
+        },
+        {
+          "condition": "Paragraph-only answers",
+          "score": "1-2"
+        },
+        {
+          "condition": "Structured answers",
+          "score": 3
+        },
+        {
+          "condition": "FAQs + definitions",
+          "score": 4
+        },
+        {
+          "condition": "Fully answer-ready",
+          "score": 5
+        }
+      ]
+    },
+    {
+      "name": "Risk & Gaps",
+      "score_range": "0-5",
+      "required_checks": [
+        "Contradictions present",
+        "Overclaims present",
+        "Ambiguity level (LOW / MED / HIGH)",
+        "Entity collision risk (LOW / MED / HIGH)"
+      ],
+      "score_mapping": [
+        {
+          "risk_level": "Severe contradictions",
+          "score": "0-1"
+        },
+        {
+          "risk_level": "High ambiguity",
+          "score": 2
+        },
+        {
+          "risk_level": "Moderate risk",
+          "score": 3
+        },
+        {
+          "risk_level": "Low risk",
+          "score": 4
+        },
+        {
+          "risk_level": "Minimal risk",
+          "score": 5
+        }
+      ]
+    }
+  ]
 }
